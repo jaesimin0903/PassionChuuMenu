@@ -3,8 +3,8 @@
 import { useState } from "react";
 import MenuDropdown from "../components/MenuDropdown";
 import MenuList from "../components/MenuList";
-
-const Menu = ({ params }: { params: { locale: string } }) => {
+type Language = 'ko' | 'en' | 'ja' | 'th' | 'ch';
+const Menu = ({ params }: { params: { locale: Language } }) => {
     const [selectedLanguage, setSelectedLanguage] = useState(params.locale);
 
     return (

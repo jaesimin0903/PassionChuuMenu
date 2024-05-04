@@ -3,10 +3,10 @@
 "use client";
 
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
-
+type Language = 'ko' | 'en' | 'ja' | 'th' | 'ch';
 type Props = {
-    selectedLanguage: string;
-    setSelectedLanguage: (language: string) => void;
+    selectedLanguage: Language;
+    setSelectedLanguage: (language: Language) => void;
 };
 
 const MenuDropdown = ({ selectedLanguage, setSelectedLanguage }: Props) => {
@@ -14,7 +14,7 @@ const MenuDropdown = ({ selectedLanguage, setSelectedLanguage }: Props) => {
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
-    const changeLanguage = (lng: string) => {
+    const changeLanguage = (lng: Language) => {
         setSelectedLanguage(lng);
         //router.push(`/${lng}${pathname}`);
     };
@@ -22,7 +22,7 @@ const MenuDropdown = ({ selectedLanguage, setSelectedLanguage }: Props) => {
     return (
         <select
             value={selectedLanguage}
-            onChange={(e) => changeLanguage(e.target.value)}
+            onChange={(e) => changeLanguage(e.target.value as Language)}
         >
             <option value="ko">한국어</option>
             <option value="en">English</option>
