@@ -5,11 +5,46 @@
 import { useEffect, useState } from "react";
 import MenuItemCard from "./MenuItemCard";
 import img from "../images/1.jpg"
+import { StaticImageData } from "next/image";
+type Language = 'ko' | 'en' | 'ja' | 'th' | 'ch';
+
+
 type Props = {
-    selectedLanguage: string;
+    selectedLanguage: Language;
 };
 
-const translations = {
+type MenuTranslations = {
+    ko: MenuTranslation;
+    en: MenuTranslation;
+    ja: MenuTranslation;
+    th: MenuTranslation;
+    ch: MenuTranslation;
+};
+
+type MenuTranslation = {
+    title: string;
+    dishes: string[];
+    prices: string[];
+    imageUrl: StaticImageData; // 이미지 URL에 대한 타입 (실제로는 이 부분을 다른 타입으로 수정해야 할 수 있음)
+    title2: string;
+    dishes2: string[];
+    prices2: string[];
+    imageUrl2: StaticImageData;
+    title3: string;
+    dishes3: string[];
+    prices3: string[];
+    imageUrl3: StaticImageData;
+    title4: string;
+    dishes4: string[];
+    prices4: string[];
+    imageUrl4: StaticImageData;
+    title5: string;
+    dishes5: string[];
+    prices5: string[];
+    imageUrl5: StaticImageData;
+};
+
+const translations :MenuTranslations = {
     ko: {
         title: "3인 세트 메뉴",
         dishes: ["쭈꾸미 시그니처 세트", "쭈꾸미삼겹 시그니처 세트"],

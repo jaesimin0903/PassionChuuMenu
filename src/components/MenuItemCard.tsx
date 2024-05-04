@@ -1,10 +1,10 @@
 // components/MenuItemCard.tsx
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 type MenuItemProps = {
     name: string;
     price: string;
-    imageUrl : string;
+    imageUrl : StaticImageData;
 };
 
 const MenuItemCard = ({ name, price,imageUrl }: MenuItemProps) => {
