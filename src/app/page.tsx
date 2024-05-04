@@ -1,19 +1,25 @@
 // app/page.tsx
-'use client'
+
+"use client";
+
 import { useState } from "react";
 import MenuDropdown from "../components/MenuDropdown";
 import MenuList from "../components/MenuList";
-type Language = 'ko' | 'en' | 'ja' | 'th' | 'ch';
+
+type Language = "ko" | "en" | "ja" | "th" | "ch";
+
 const Menu = ({ params }: { params: { locale: Language } }) => {
     const [selectedLanguage, setSelectedLanguage] = useState(params.locale);
 
     return (
-        <div>
-            <h1>열정도 쭈꾸미</h1>
-            <MenuDropdown
-                selectedLanguage={selectedLanguage}
-                setSelectedLanguage={setSelectedLanguage}
-            />
+        <div className="container mx-auto px-4 py-6 space-y-6">
+            <h1 className="text-2xl font-bold text-center">열정도 쭈꾸미</h1>
+            <div className="flex justify-center">
+                <MenuDropdown
+                    selectedLanguage={selectedLanguage}
+                    setSelectedLanguage={setSelectedLanguage}
+                />
+            </div>
             <MenuList selectedLanguage={selectedLanguage} />
         </div>
     );

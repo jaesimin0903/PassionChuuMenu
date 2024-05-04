@@ -2,7 +2,7 @@
 
 "use client";
 
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 type Language = 'ko' | 'en' | 'ja' | 'th' | 'ch';
 type Props = {
     selectedLanguage: Language;
@@ -12,7 +12,6 @@ type Props = {
 const MenuDropdown = ({ selectedLanguage, setSelectedLanguage }: Props) => {
     const router = useRouter();
     const pathname = usePathname();
-    //const searchParams = useSearchParams();
 
     const changeLanguage = (lng: Language) => {
         setSelectedLanguage(lng);
@@ -23,6 +22,7 @@ const MenuDropdown = ({ selectedLanguage, setSelectedLanguage }: Props) => {
         <select
             value={selectedLanguage}
             onChange={(e) => changeLanguage(e.target.value as Language)}
+            className="block  px-4 py-2 text-base text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500"
         >
             <option value="ko">한국어</option>
             <option value="en">English</option>
