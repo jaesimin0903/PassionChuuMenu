@@ -12,7 +12,7 @@ type Props = {
 const MenuDropdown = ({ selectedLanguage, setSelectedLanguage }: Props) => {
     const router = useRouter();
     const pathname = usePathname();
-    const searchParams = useSearchParams();
+    //const searchParams = useSearchParams();
 
     const changeLanguage = (lng: Language) => {
         setSelectedLanguage(lng);
