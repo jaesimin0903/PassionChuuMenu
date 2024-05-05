@@ -292,7 +292,7 @@ const MenuList = ({ selectedLanguage }: Props) => {
         <div className="space-y-8">
             {[menu.title, menu.title2,menu.title33, menu.title3, menu.title4, menu.title5].map((title, index) => (
                 <div key={index}>
-                    <h1 className="text-3xl font-bold text-center mb-4" id={toString(index)}>{title}</h1>
+                    <h1 className="text-3xl font-bold text-center mb-4" id={index.toString()}>{title}</h1>
                     <div className="menu-list">
                         {[menu.dishes, menu.dishes2,menu.dishes33, menu.dishes3, menu.dishes4, menu.dishes5][index].map((dish, dishIndex) => (
                             <MenuItemCard
