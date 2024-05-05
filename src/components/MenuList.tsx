@@ -4,6 +4,8 @@
 
 import { useEffect, useState } from "react";
 import MenuItemCard from "./MenuItemCard";
+import ScrollButtons from "./ScrollButtons";
+
 import img from "../images/1.jpg";
 import img2 from "../images/2.jpg";
 import img3 from "../images/3.jpg";
@@ -119,12 +121,12 @@ const translations :MenuTranslations = {
         title: "3-Person Set Menu (3인 세트 메뉴)",
         dishes: ["Jjukumi Signature Set, 쭈꾸미 시그니처 세트", "Jjukumi-Samgyeop Signature Set, 쭈꾸미삼겹 시그니처 세트"],
         prices: ["₩51,000", "₩55,000"],
-        imageUrl: [img,img],
+        imageUrl: [img,img2],
         discriptions: ["Stir-fried Octopus (2) + Udon + Steamed Egg (Add cheese for +₩1,500) + Salted Grill", "Stir-fried Octopus with Pork Belly (2) + Udon + Steamed Egg (Add cheese for +₩1,500) + Salted Grill"],
         title2: "2-Person Set Menu (2인 세트 메뉴)",
         dishes2: ["Jjukumi Set, 쭈꾸미 세트", "Jjukumi-Samgyeop Set, 쭈꾸미삼겹 세트", "Grilled Set, 구이 세트"],
         prices2: ["₩36,000", "₩40,000", "₩38,000"],
-        imageUrl2: [img,img,img],
+        imageUrl2 :[img3,img4,img5],
         discriptions2: [
             "Stir-fried Octopus (2) + Udon + Steamed Egg (Add cheese for +₩1,500)", 
             "Stir-fried Octopus with Pork Belly (2) + Udon + Steamed Egg (Add cheese for +₩1,500)", 
@@ -133,22 +135,22 @@ const translations :MenuTranslations = {
         title33: "Additional Menu (단품 메뉴)",
         dishes33: ["Stir-Fried Octopus, 철판 쭈꾸미", "Stir-Fried Octopus with Pork Belly, 철판 쭈꾸미 삼겹살", "Salted Grilled Octopus, 소금구이", "Octopus & Pork Belly Grill, 쭈삼구이", "Seasoned Grilled Octopus, 양념구이", "Grilled Sea Eel, 꼼장어구이"],
         prices33: ["₩14,000", "₩16,000", "₩15,000", "₩17,000", "₩15,000", "₩16,000"],
-        imageUrl33: [img,img,img,img,img,img],
+        imageUrl33 :[img6,img7,img8,img9,img10,img11],
         discriptions33: [],
         title3: "Side Menu (사이드 메뉴)",
         dishes3: ["Volcano Steamed Egg, 화산폭발계란찜", "Volcano Cheese Steamed Egg, 화산폭발치즈계란찜", "Sesame Bulgogi Rice Ball, 깨불고기 주먹밥", "Hot Plate Fried Rice, 철판볶음밥", "Fried Rice Cheese Add-on, 볶음밥 치즈추가", "Clam Soup, 바지락 백탕"],
         prices3: ["₩5,000", "₩6,500", "₩5,000", "₩4,000", "₩1,500", "₩8,000"],
-        imageUrl3: [img,img,img,img,img,img],
+        imageUrl3 :[img12,img13,img14,img15,img16,img17],
         discriptions3: [],
         title4: "Extra Menu (사리 메뉴)",
         dishes4: ["Udon, 우동 사리", "Rice Cake, 떡 사리", "Cheese, 치즈 사리", "Pork Belly (200g), 삽겹 사리(200g)", "Minari, 미나리 사리", "Flying Fish Roe, 날치알"],
         prices4: ["₩3,000", "₩3,000", "₩3,000", "₩6,000", "₩4,000", "₩3,000"],
-        imageUrl4: [img,img,img,img,img,img],
+        imageUrl4 :[img18,img19,img20,img21,img22,img23],
         discriptions4: [],
         title5: "Drinks & Beverages (주류 / 음료)",
         dishes5: ["Soju (Chamisul, Chum-Churum, Jinro, Saero), 소주(참이슬, 처음처럼, 진로, 새로)", "Chung Ha, 청하", "Hallasan, 한라산", "Beer (Cass, Terra, Kelly, Crush), 맥주(카스, 테라, 켈리, 크러시)", "Non-alcohol Beer (Tsingtao, Heineken), 논알콜 맥주(칭따오, 하이네켄)", "Soft Drinks (Coke, Sprite, Zero Coke, Zero Sprite), 음료(콜라, 사이다, 제로콜라, 제로사이다)", "Highball, 하이볼", "Passion Highball, 열정 하이볼"],
         prices5: ["₩5,000", "₩6,000", "₩6,000", "₩5,000", "₩6,000/₩8,000", "₩2,000", "₩8,000", "₩8,000"],
-        imageUrl5: [img,img,img,img,img,img,img,img],
+        imageUrl5 :[img24,img25,img26,img27,img28,img29,img30,img31],
         discriptions5: []
     }
     
@@ -157,7 +159,7 @@ const translations :MenuTranslations = {
         title: "3人のセットメニュー",
         dishes: ["ジュックミシグネチャーセット", "ジュックミサムギョプシグネチャーセット"],
         prices: ["₩51,000", "₩55,000"],
-        imageUrl: [img,img],
+        imageUrl: [img,img2],
         discriptions: [
             "鉄板タコ (2) + うどん + 蒸し卵 (チーズ追加 +¥1,500) + 塩焼き",
             "鉄板タコと豚肉 (2) + うどん + 蒸し卵 (チーズ追加 +¥1,500) + 塩焼き"
@@ -165,7 +167,7 @@ const translations :MenuTranslations = {
         title2: "2人のセットメニュー",
         dishes2: ["ジュックミセット", "ジュックミサムギョプセット", "焼き物セット"],
         prices2: ["₩36,000", "₩40,000", "₩38,000"],
-        imageUrl2: [img,img,img],
+        imageUrl2 :[img3,img4,img5],
         discriptions2: [
             "鉄板タコ (2) + うどん + 蒸し卵 (チーズ追加 +¥1,500)", 
             "鉄板タコと豚肉 (2) + うどん + 蒸し卵 (チーズ追加 +¥1,500)", 
@@ -174,22 +176,22 @@ const translations :MenuTranslations = {
         title33:"サイドメニュー",
         dishes33: ["茶碗蒸し", "チーズ入り茶碗蒸し", "焼肉おにぎり", "チャーハン", "チャーハンチーズの追加","アサリスープ"],
         prices33: ["₩14,000", "₩16,000", "₩15,000", "₩17,000", "₩15,000", "₩16,000"],
-        imageUrl33 :[img,img,img,img,img,img],
+        imageUrl33 :[img6,img7,img8,img9,img10,img11],
         discriptions33:[],
         title3: "サイドメニュー",
         dishes3: ["火山爆発蒸し卵", "火山爆発チーズ蒸し卵", "ごま油ブルゴギおにぎり", "鉄板炒めご飯", "炒めご飯にチーズ追加", "アサリ白湯"],
         prices3: ["₩5,000", "₩6,500", "₩5,000", "₩4,000", "₩1,500", "₩8,000"],
-        imageUrl3: [img,img,img,img,img,img],
+        imageUrl3 :[img12,img13,img14,img15,img16,img17],
         discriptions3:[],
         title4: "具材メニュー",
         dishes4: ["うどん", "トック", "チーズ", "サムギョプ（200g）", "セリ", "とびこ"],
         prices4: ["₩3,000", "₩3,000", "₩3,000", "₩6,000", "₩4,000", "₩3,000"],
-        imageUrl4: [img,img,img,img,img,img],
+        imageUrl4 :[img18,img19,img20,img21,img22,img23],
         discriptions4:[],
         title5: "酒類 / ソフトドリンク",
         dishes5: ["焼酎（チャミスル、初めてのように、ジンロ、セロ）", "清酒", "ハルラサン", "ビール（カス、テラ、ケリー、クラッシュ）", "ノンアルコールビール（青島、ハイネケン）", "ソフトドリンク（コーラ、サイダー、ゼロコーラ、ゼロサイダー）", "ハイボール", "情熱ハイボール"],
         prices5: ["₩5,000", "₩6,000", "₩6,000", "₩5,000", "₩6,000/₩8,000", "₩2,000", "₩8,000", "₩8,000"],
-        imageUrl5: [img,img,img,img,img,img,img,img],
+        imageUrl5 :[img24,img25,img26,img27,img28,img29,img30,img31],
         discriptions5:[],
     }
     ,
@@ -197,7 +199,7 @@ const translations :MenuTranslations = {
         title: "เมนูเซตสำหรับ 3 คน",
         dishes: ["เซ็ตลายเซ็นเจอร์ จุกุมิ, 쭈꾸미 시그니처 세트", "เซ็ตสามย่านกุมิ-ซัมเกียบ, 쭈꾸미삼겹 시그니처 세트"],
         prices: ["₩51,000", "₩55,000"],
-        imageUrl: [img,img],
+        imageUrl: [img,img2],
         discriptions: [
             "ปลาหมึกผัดกระทะร้อน (2) + อุด้ง + ไข่ตุ๋น (เพิ่มชีส +฿1,500) + ย่างเกลือ",
             "ปลาหมึกและหมูสามชั้นผัดกระทะร้อน (2) + อุด้ง + ไข่ตุ๋น (เพิ่มชีส +฿1,500) + ย่างเกลือ"
@@ -205,7 +207,7 @@ const translations :MenuTranslations = {
         title2: "เมนูเซตสำหรับ 2 คน",
         dishes2: ["เซ็ตจุกุมิ, 쭈꾸미 세트", "เซ็ตสามย่านกุมิ-ซัมเกียบ, 쭈꾸미삼겹 세트", "เซ็ตย่าง, 구이 세트"],
         prices2: ["₩36,000", "₩40,000", "₩38,000"],
-        imageUrl2: [img,img,img],
+        imageUrl2 :[img3,img4,img5],
         discriptions2: [
             "ปลาหมึกผัดกระทะร้อน (2) + อุด้ง + ไข่ตุ๋น (เพิ่มชีส +฿1,500)",
             "ปลาหมึกและหมูสามชั้นผัดกระทะร้อน (2) + อุด้ง + ไข่ตุ๋น (เพิ่มชีส +฿1,500)",
@@ -214,22 +216,22 @@ const translations :MenuTranslations = {
         title33: "เมนูข้างเคียง",
         dishes33: ["ไข่ตุ๋นภูเขาไฟ, 철판쭈꾸미", "ไข่ตุ๋นชีสภูเขาไฟ, 철판쭈꾸미삼겹살", "ข้าวปั้นหมูย่างงา, 소금구이", "ข้าวผัดกระทะร้อน, 쭈삼구이", "ข้าวผัดกระทะร้อนเพิ่มชีส, 양념구이", "ซุปหอยลาย, 꼼장어구이"],
         prices33: ["₩14,000", "₩16,000", "₩15,000", "₩17,000", "₩15,000", "₩16,000"],
-        imageUrl33: [img,img,img,img,img,img],
+        imageUrl33 :[img6,img7,img8,img9,img10,img11],
         discriptions33: [],
         title3: "เมนูอาหารข้าง",
         dishes3: ["ไข่ตุ๋นภูเขาไฟ, 화산폭발계란찜", "ไข่ตุ๋นชีสภูเขาไฟ, 화산폭발치즈계란찜", "ข้าวอบบึ้งโบกิโบกิ, 깨불고기 주먹밥", "ข้าวผัดจานเกล็ด, 철판볶음밥", "ข้าวผัดเพิ่มชีส, 볶음밥 치즈추가", "ซุปหอยนางรม, 바지락 백탕"],
         prices3: ["₩5,000", "₩6,500", "₩5,000", "₩4,000", "₩1,500", "₩8,000"],
-        imageUrl3: [img,img,img,img,img,img],
+        imageUrl3 :[img12,img13,img14,img15,img16,img17],
         discriptions3: [],
         title4: "เมนูส่วนเสริม",
         dishes4: ["อุด้ง, 우동 사리", "เบ็กฮัน, 떡 사리", "ชีส, 치즈 사리", "สามย่านซัมเกียบ (200 กรัม), 삽겹 사리(200g)", "มินาริ, 미나리 사리", "ไข่ปลากะทะ, 날치알"],
         prices4: ["₩3,000", "₩3,000", "₩3,000", "₩6,000", "₩4,000", "₩3,000"],
-        imageUrl4: [img,img,img,img,img,img],
+        imageUrl4 :[img18,img19,img20,img21,img22,img23],
         discriptions4: [],
         title5: "เครื่องดื่มและเครื่องดื่ม",
         dishes5: ["โซจู (ชามิซูล, ชัม-ชูรุม, จินโร, เซ로่), 소주(참이슬, 처음처럼, 진로, 새로)", "ชูงฮา, 청하", "ฮัลลาซาน, 한라산", "เบียร์ (แคส, เทอร์ร่า, 켈ลี่, ครัช), 맥주(카스, 테라, 켈리, 크러시)", "เบียร์โฮลด์ (สิงเถา, 하이네켄), 논알콜 맥주(칭따오, 하이네켄)", "เครื่องดื่มซอฟต์ (โค้ก, สไปร์ท, โค้กซีโร, สไปร์ทซีโร), 음료(콜라, 사이다, 제로콜라, 제로사이다)", "ไฮบอล, 하이볼", "ไฮบอลแฟชั่น, 열정 하이볼"],
         prices5: ["₩5,000", "₩6,000", "₩6,000", "₩5,000", "₩6,000/₩8,000"],
-        imageUrl5:[img,img,img,img,img,img,img,img],
+        imageUrl5 :[img24,img25,img26,img27,img28,img29,img30,img31],
         discriptions5: [],
     }
     
@@ -237,7 +239,7 @@ const translations :MenuTranslations = {
         title: "3人套餐菜单",
         dishes: ["章鱼小酱套餐, 쭈꾸미 시그니처 세트", "章鱼三层肉小酱套餐, 쭈꾸미삼겹 시그니처 세트"],
         prices: ["₩51,000", "₩55,000"],
-        imageUrl: [img,img],
+        imageUrl: [img,img2],
         discriptions: [
             "铁板章鱼 (2) + 乌冬面 + 蒸蛋 (加芝士 +¥1,500) + 盐烤",
             "铁板章鱼和五花肉 (2) + 乌冬面 + 蒸蛋 (加芝士 +¥1,500) + 盐烤"
@@ -245,7 +247,7 @@ const translations :MenuTranslations = {
         title2: "2人套餐菜单",
         dishes2: ["章鱼套餐, 쭈꾸미 세트", "章鱼三层肉套餐, 쭈꾸미삼겹 세트", "烤套餐, 구이 세트"],
         prices2: ["₩36,000", "₩40,000", "₩38,000"],
-        imageUrl2: [img,img,img],
+        imageUrl2 :[img3,img4,img5],
         discriptions2: [
             "铁板章鱼 (2) + 乌冬面 + 蒸蛋 (加芝士 +¥1,500)", 
             "铁板章鱼和五花肉 (2) + 乌冬面 + 蒸蛋 (加芝士 +¥1,500)", 
@@ -254,22 +256,22 @@ const translations :MenuTranslations = {
         title33: "单品菜单",
         dishes33: ["铁板小章鱼, 철판 쭈꾸미", "铁板小章鱼五花肉, 철판 쭈꾸미 삼겹살", "盐烤, 소금구이", "小章鱼和五花肉烤, 쭈삼구이", "调味烤, 양념구이", "烤虾虎鱼, 꼼장어구이"],
         prices33: ["₩14,000", "₩16,000", "₩15,000", "₩17,000", "₩15,000", "₩16,000"],
-        imageUrl33: [img,img,img,img,img,img],
+        imageUrl33 :[img6,img7,img8,img9,img10,img11],
         discriptions33: [],
         title3: "小菜菜单",
         dishes3: ["火山爆发蒸蛋, 화산폭발계란찜", "火山爆发芝士蒸蛋, 화산폭발치즈계란찜", "芝麻牛肉饭团, 깨불고기 주먹밥", "铁板炒饭, 철판볶음밥", "炒饭加芝士, 볶음밥 치즈추가", "蛤蜊汤, 바지락 백탕"],
         prices3: ["₩5,000", "₩6,500", "₩5,000", "₩4,000", "₩1,500", "₩8,000"],
-        imageUrl3: [img,img,img,img,img,img],
+        imageUrl3 :[img12,img13,img14,img15,img16,img17],
         discriptions3: [],
         title4: "配菜菜单",
         dishes4: ["乌冬面, 우동 사리", "年糕, 떡 사리", "芝士, 치즈 사리", "三层肉(200g), 삼겹 사리(200g)", "香菜, 미나리 사리", "鱼子, 날치알"],
         prices4: ["₩3,000", "₩3,000", "₩3,000", "₩6,000", "₩4,000", "₩3,000"],
-        imageUrl4: [img,img,img,img,img,img],
+        imageUrl4 :[img18,img19,img20,img21,img22,img23],
         discriptions4: [],
         title5: "饮料 / 饮料",
         dishes5: ["烧酒(池南, 一如初, 金罗, 塞罗), 소주(참이슬, 처음처럼, 진로, 새로)", "清酒, 청하", "哈拉山, 한라산", "啤酒(卡斯, 特拉, 凯利, 克鲁什), 맥주(카스, 테라, 켈리, 크러시)", "无酒精啤酒(青岛, 喜力), 논알콜 맥주(칭따오, 하이네켄)", "软饮料(可口可乐, 雪碧, 零可乐, 零雪碧), 음료(콜라, 사이다, 제로콜라, 제로사이다)", "高球, 하이볼", "激情高球, 열정 하이볼"],
         prices5: ["₩5,000", "₩6,000", "₩6,000", "₩5,000", "₩6,000/₩8,000", "₩2,000", "₩8,000", "₩8,000"],
-        imageUrl5: [img,img,img,img,img,img,img,img],
+        imageUrl5 :[img24,img25,img26,img27,img28,img29,img30,img31],
         discriptions5: []
     }
     
@@ -290,7 +292,7 @@ const MenuList = ({ selectedLanguage }: Props) => {
         <div className="space-y-8">
             {[menu.title, menu.title2,menu.title33, menu.title3, menu.title4, menu.title5].map((title, index) => (
                 <div key={index}>
-                    <h1 className="text-3xl font-bold text-center mb-4">{title}</h1>
+                    <h1 className="text-3xl font-bold text-center mb-4" id={index}>{title}</h1>
                     <div className="menu-list">
                         {[menu.dishes, menu.dishes2,menu.dishes33, menu.dishes3, menu.dishes4, menu.dishes5][index].map((dish, dishIndex) => (
                             <MenuItemCard
