@@ -36,3 +36,20 @@
         right: 10px;
     }
 }
+
+.h-150{
+    height: 32rem;
+}
+
+.card{
+    position: relative;
+}
+
+.card-price{
+    position: absolute;
+    text-align: center;
+    bottom:2%;
+    width: 90%;
+    font-weight: 1000;
+    font-size: large;
+}

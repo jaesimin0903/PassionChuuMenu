@@ -11,28 +11,28 @@ type MenuItemProps = {
 const MenuItemCard = ({ name, price, imageUrl,discription }: MenuItemProps) => {
     var name_arr = name.split(',');
     return (
-        <div className="rounded-lg shadow-md bg-white overflow-hidden w-60">
+        <div className="rounded-lg shadow-md bg-white overflow-hidden w-72 h-150 card">
             <Image
                 src={imageUrl}
                 alt={name}
-                className="object-cover"
+                className="object-cover w-full h-1/2"
                 width={240}
-                height={150}
+                height={100}
             />
-            <div className="p-4">
+            <div className="p-4 h-1/2">
             {
                 (name_arr.length >= 2) ? (
                     <>
-                    <h3 className="text-xl font-extrabold mb-2">{name_arr[0]}</h3>
-                    <h3 className=" mb-2">{name_arr[1]}</h3>
+                    <h3 className="text-xl font-extrabold mb-2 1/4">{name_arr[0]}</h3>
+                    <h3 className=" mb-2 1/4">{name_arr[1]}</h3>
                     </>
                 ) : (
-                    <h3 className="text-xl font-extrabold mb-2">{name_arr[0]}</h3>
+                    <div className="text-xl font-extrabold mb-2 h-1/2">{name_arr[0]}</div>
                 )
                 }
 
-                <h3 className="text-md font-normal mb-2">{discription}</h3>
-                <p className="text-gray-700">{price}</p>
+                <div className="text-md font-normal  ">{discription}</div>
+                <div className="text-gray-700 card-price">{price}</div>
             </div>
         </div>
     );

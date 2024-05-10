@@ -26,7 +26,6 @@ const ScrollButtons = () => {
             return prev;
         }, 0);
         console.log(closest);
-        
         setCurrentIndex(closest);
     };
 
