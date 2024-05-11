@@ -6,6 +6,7 @@ import { useState } from "react";
 import MenuDropdown from "../components/MenuDropdown";
 import MenuList from "../components/MenuList";
 import ScrollButtons from "@/components/ScrollButtons";
+import HowtoeatButton from "@/components/HowtoeatButton";
 
 type Language = "ko" | "en" | "ja" | "th" | "ch";
 
@@ -24,6 +25,7 @@ const Menu = ({ params }: { params: { locale: Language } }) => {
             </div>
             <MenuList selectedLanguage={selectedLanguage} />
             <ScrollButtons />
+            <HowtoeatButton/>
         </div>
     );
 };
