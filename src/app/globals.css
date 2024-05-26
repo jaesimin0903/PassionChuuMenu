@@ -9,8 +9,12 @@
 
 @media (max-width: 600px) {
     .menu-list {
-        @apply flex-col;
+        @apply flex-row;
     }
+}
+
+.image-box{
+    height: 150px;
 }
 
 /* styles/components.css */

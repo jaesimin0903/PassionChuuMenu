@@ -7,6 +7,7 @@ import MenuDropdown from "../components/MenuDropdown";
 import MenuList from "../components/MenuList";
 import ScrollButtons from "@/components/ScrollButtons";
 import HowtoeatButton from "@/components/HowtoeatButton";
+import StickyButton from "@/components/StickyButton";
 
 type Language = "ko" | "en" | "ja" | "th" | "ch";
 
@@ -23,6 +24,7 @@ const Menu = ({ params }: { params: { locale: Language } }) => {
                     setSelectedLanguage={setSelectedLanguage}
                 />
             </div>
+            <StickyButton />
             <MenuList selectedLanguage={selectedLanguage} />
             <ScrollButtons />
             <HowtoeatButton/>
