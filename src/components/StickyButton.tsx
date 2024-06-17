@@ -52,13 +52,13 @@ const StickyButton = () => {
     
 
     return (
-        <div className="flex flex-row justify-between pl-1 pr-1 sticky top-1 h-10 bg-slate-400 w-full z-50 items-center rounded-lg ">
-            <a onClick={()=>scrollToNextTitle(0)}>Set(3)</a>
-            <a onClick={()=>scrollToNextTitle(1)}>Set(2)</a>
-            <a onClick={()=>scrollToNextTitle(2)}>Additional</a>
-            <a onClick={()=>scrollToNextTitle(3)}>Side</a>
-            <a onClick={()=>scrollToNextTitle(4)}>Toping</a>
-            <a onClick={()=>scrollToNextTitle(5)}>Bevarage</a>
+        <div className="flex flex-row justify-between pl-1 pr-1 sticky top-1 h-10 back-sub w-full z-50 items-center rounded-lg ">
+            <a className="text-content"onClick={()=>scrollToNextTitle(0)}>Combo(3)</a>
+            <a className="text-content"onClick={()=>scrollToNextTitle(1)}>Combo(2)</a>
+            <a className="text-content"onClick={()=>scrollToNextTitle(2)}>Add</a>
+            <a className="text-content"onClick={()=>scrollToNextTitle(3)}>Side</a>
+            <a className="text-content"onClick={()=>scrollToNextTitle(4)}>Toping</a>
+            <a className="text-content"onClick={()=>scrollToNextTitle(5)}>Bevarage</a>
         </div>
         
     );

@@ -58,7 +58,7 @@ const MenuItemCard = ({ name, price, imageUrl, discription }: MenuItemProps) => 
                     width={240}
                     height={100}
                 />
-                    <div className="p-4 h-1/2"  >
+                    <div className="p-4 h-1/2 text-center"  >
                     {
                 (name_arr.length >= 2) ? (
                     <>
@@ -70,7 +70,7 @@ const MenuItemCard = ({ name, price, imageUrl, discription }: MenuItemProps) => 
                 )
                 }
                         <div className="text-md font-normal">{discription}</div>
-                        <div className="text-gray-700 card-price">{price}</div>
+                        <h3 className="text-gray-700 card-price">{price}</h3>
                     </div>
                 </DetailModal>
             )}

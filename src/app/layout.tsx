@@ -18,6 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>{children}
         <div id="global-modal"></div>
+        <div id="howtoeat-modal"></div>
       </body>
     </html>
   );

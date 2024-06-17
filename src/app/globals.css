@@ -3,6 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+    --maincolor : #151515;
+    --highlight : #A91D3A;
+    --subcolor : #C73659;
+    --content : #EEEEEE;
+}
+
 .menu-list {
     @apply flex flex-wrap gap-4 justify-center items-center;
 }
@@ -11,6 +18,26 @@
     .menu-list {
         @apply flex-row;
     }
+}
+
+.container{
+    background-color: var(--maincolor);
+}
+
+.text-content{
+    color : var(--content);
+}
+
+.back-sub{
+    background-color : var(--subcolor);
+}
+
+.back-high{
+    background-color: var(--highlight);
+}
+
+.hover-back-high:hover{
+    background-color: var(--highlight);
 }
 
 .image-box{
@@ -81,6 +108,19 @@
     z-index: 20000;
 }
 
+.howtoeat-modal{
+    position: fixed;
+    height: 70%;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5%;
+    background-color: #ffffff;
+    border-radius: 5%;
+    z-index: 20000;
+}
+
 .card{
     position: relative;
 }
@@ -89,7 +129,7 @@
     position: absolute;
     text-align: center;
     bottom:2%;
-    width: 90%;
+    width:80%;
     font-weight: 1000;
     font-size: large;
 }

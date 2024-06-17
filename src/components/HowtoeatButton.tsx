@@ -1,13 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HowtoeatModal from "./HowtoeatModal";
 import img from "../images/1.jpg";
 import Image from "next/image";
 import {StaticImageData} from "next/image"
 
-const titles = ["0", "1", "2", "3", "4", "5"];
+const titles = ["0", "1", "2", "3", "4"];
 const images = Array(5).fill(img); // 배열 생성 방식 간소화
-const desc = ["1.hello", "2.hi", "3.gg", "4.123", "5.1414"];
-const MAX_PAGE = desc.length - 1; // 마지막 페이지 번호를 상수로 관리
+
+type DescLanguage = {
+    contents : string[];
+}
+
+type Language = 'ko' | 'en' | 'ja' | 'th' | 'ch';
+
+type Props = {
+    selectedLanguage: Language;
+};
+
+type DescLanguages = {
+    [key in Language]: DescLanguage;
+};
+
+const desc : DescLanguages = {
+ko:{contents :["1. 깻잎을 한 손위에 올린다.", "2. 천사채를 올린다.", "3. 마요네즈 소스와 기호에 맞게 날치알을 올린다.", "4. 쭈꾸미를 넣어 완성시킨다.", "5. 맛있게 먹기~"]},
+en:{contents :["1. Place perilla leaves on one hand.", "2. Put angel salad on top of perilla leaves.", "3. Put the mayonnaise sauce and flying fish roe on top according to your preference.", "4. Put octopus on top of it to finish.", "5. Let's enjoy it"]},
+ja:{contents :["1. 깻잎을 한 손위에 올린다.", "2. 천사채를 올린다.", "3. 마요네즈 소스와 기호에 맞게 날치알을 올린다.", "4. 쭈꾸미를 넣어 완성시킨다.", "5. 맛있게 먹기~"]},
+th:{contents :["1. 깻잎을 한 손위에 올린다.", "2. 천사채를 올린다.", "3. 마요네즈 소스와 기호에 맞게 날치알을 올린다.", "4. 쭈꾸미를 넣어 완성시킨다.", "5. 맛있게 먹기~"]},
+ch:{contents :["1. 깻잎을 한 손위에 올린다.", "2. 천사채를 올린다.", "3. 마요네즈 소스와 기호에 맞게 날치알을 올린다.", "4. 쭈꾸미를 넣어 완성시킨다.", "5. 맛있게 먹기~"]},
+}
+const MAX_PAGE = 4; // 마지막 페이지 번호를 상수로 관리
 
 type Direction = 'prev' | 'next';
 
@@ -23,9 +44,17 @@ interface ContentDisplayProps {
     pageNumber: number; // 페이지 번호
 }
 
-const HowtoeatButton = () => {
+const defaultLang = desc.ko;
+
+const HowtoeatButton = ({selectedLanguage}:Props) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [curPage, setCurPage] = useState(0);
+    const [language, setLanguage] = useState(desc[selectedLanguage] || defaultLang);
+
+    useEffect(() => {
+      setLanguage(desc[selectedLanguage] || defaultLang);
+    }, [selectedLanguage]);
+    
 
     const navigatePage = (direction : Direction) => {
         setCurPage((prevPage) => {
@@ -40,13 +69,15 @@ const HowtoeatButton = () => {
 
     return (
         <div style={{ position: "fixed", bottom: "20px", zIndex: 1000 }} className="left-1/2 how-to-eat">
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => setIsModalOpen(true)}>How To Eat</button>
+            <button className="back-sub hover:back-high text-white font-bold py-2 px-4 rounded" onClick={() => setIsModalOpen(true)}>How To Eat</button>
             {isModalOpen && (
                 <HowtoeatModal open={isModalOpen} onClose={() => setIsModalOpen(false)}>
-                    <div className="flex h-11/12 bg-blue-700">
-                        <NavigationButton direction="prev" onClick={() => navigatePage('prev')} />
-                        <ContentDisplay img={img} description={desc[curPage]} pageNumber={curPage} />
-                        <NavigationButton direction="next" onClick={() => navigatePage('next')} />
+                    <div className="flex flex-col h-11/12 ">
+                        <ContentDisplay img={img} description={language.contents[curPage]} pageNumber={curPage} />
+                        <div className="flex w-full">
+                            <NavigationButton direction="prev" onClick={() => navigatePage('prev')} />
+                            <NavigationButton direction="next" onClick={() => navigatePage('next')} />
+                        </div>
                     </div>
                 </HowtoeatModal>
             )}
@@ -55,22 +86,22 @@ const HowtoeatButton = () => {
 };
 
 const NavigationButton = ({ direction, onClick }:NavigationButtonProps) => (
-    <div className="w-1/6 bg-green-50 flex items-center justify-center">
-        <button className={`flex h-10 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-3xl`} onClick={onClick}>
+    <div className="w-full  flex items-center justify-center p-2">
+        <button className={`flex  back-sub hover-back-high text-white font-bold py-2 px-4 rounded-3xl w-full justify-center`} onClick={onClick}>
             {direction === 'prev' ? '◀' : '▶'}
         </button>
     </div>
 );
 
 const ContentDisplay = ({ img , description, pageNumber }:ContentDisplayProps) => (
-    <div className="w-4/6 bg-red-500 flex-col">
-        <div className="bg-green-500 h-1/2 flex items-center justify-center">
-            <Image src={img} alt={`Page ${pageNumber}`} />
+    <div className="h-full flex-col">
+        <div className=" flex items-center justify-center">
+            <Image className="rounded-3xl" src={img} alt={`Page ${pageNumber}`} />
         </div>
-        <div className="bg-green-200 h-1/3">
+        <div className=" h-1/5 font-bold text-xl pt-3">
             {description}
         </div>
-        {pageNumber}
+        <div className="text-center text-lg font-bold">{pageNumber+1} / 5</div>
     </div>
 );
 

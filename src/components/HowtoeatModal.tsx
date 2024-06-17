@@ -14,9 +14,9 @@ const HowtoeatModal = ({ open, onClose, children }: ModalProps) => {
   return ReactDOM.createPortal(
     <>
       <div className="overLay" />
-      <div className="modal ">
+      <div className="howtoeat-modal ">
         <div className="flex justify-between h-1/12">
-            <div className="flex text-center w-full justify-center items-center">맛있게 먹는 법</div>
+            <div className="flex text-center w-full justify-center items-center font-extrabold text-xl">How To Eat</div>
             <button className="left-90%" onClick={onClose}>❌</button>
         </div>
         {children}

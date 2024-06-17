@@ -21,8 +21,8 @@ const DetailModal = ({ open, onClose, children }: ModalProps) => {
       <div className="overLay" />
       <div className="modal ">
         <div className="flex justify-between h-1/12">
-            <div className="flex text-center w-full justify-center items-center">맛있게 먹는 법</div>
-            <button className="left-90%" onClick={()=>{console.log(open);onClose();}}>❌</button>
+            <div className="flex text-center w-full justify-center items-center"></div>
+            <button className="left-90%" onClick={()=>{onClose();}}>❌</button>
         </div>
         {children}
       </div>
