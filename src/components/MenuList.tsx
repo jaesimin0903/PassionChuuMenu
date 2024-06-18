@@ -18,7 +18,7 @@ import img9 from "../images/9.jpg";
 import img10 from "../images/10.jpg";
 import img11 from "../images/11.jpg";
 import img12 from "../images/12.jpg";
-import img13 from "../images/13.png";
+import img13 from "../images/13.jpg";
 import img14 from "../images/14.jpg";
 import img15 from "../images/15.jpg";
 import img16 from "../images/16.jpg";
