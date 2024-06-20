@@ -27,12 +27,11 @@ const MenuItemCard = ({ name, price, imageUrl, discription }: MenuItemProps) => 
     return (
         <div className="rounded-lg shadow-md bg-white overflow-hidden w-44 h-80 card">
             <div onClick={handleModalOpen}>
-                <div className="w-full h-1/2 image-box">
+                <div className="w-full h-1/2 image-box relative">
                     <Image
                         src={imageUrl}
                         alt={name}
-                        className="object-fill w-full h-full"
-
+                        fill
                     />
                 </div>
                 
@@ -70,7 +69,7 @@ const MenuItemCard = ({ name, price, imageUrl, discription }: MenuItemProps) => 
                 )
                 }
                         <div className="text-md font-normal">{discription}</div>
-                        <h3 className="text-gray-700 card-price">{price}</h3>
+                        <div className="text-gray-700 card-price">{price}</div>
                     </div>
                 </DetailModal>
             )}
