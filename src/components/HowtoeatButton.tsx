@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import HowtoeatModal from "./HowtoeatModal";
-import img from "../images/1.jpg";
+import img1 from "../images/hte1.png";
+import img2 from "../images/hte2.webp";
+import img3 from "../images/hte3.webp";
+import img4 from "../images/hte4.webp";
+import img5 from "../images/hte5.webp";
 import Image from "next/image";
 import {StaticImageData} from "next/image"
 
 const titles = ["0", "1", "2", "3", "4"];
-const images = Array(5).fill(img); // 배열 생성 방식 간소화
+
 
 type DescLanguage = {
     contents : string[];
@@ -23,12 +27,16 @@ type DescLanguages = {
 
 const desc : DescLanguages = {
 ko:{contents :["1. 깻잎을 한 손위에 올린다.", "2. 천사채를 올린다.", "3. 마요네즈 소스와 기호에 맞게 날치알을 올린다.", "4. 쭈꾸미를 넣어 완성시킨다.", "5. 맛있게 먹기~"]},
-en:{contents :["1. Place perilla leaves on one hand.", "2. Put angel salad on top of perilla leaves.", "3. Put the mayonnaise sauce and flying fish roe on top according to your preference.", "4. Put octopus on top of it to finish.", "5. Let's enjoy it"]},
-ja:{contents :["1. 깻잎을 한 손위에 올린다.", "2. 천사채를 올린다.", "3. 마요네즈 소스와 기호에 맞게 날치알을 올린다.", "4. 쭈꾸미를 넣어 완성시킨다.", "5. 맛있게 먹기~"]},
-th:{contents :["1. 깻잎을 한 손위에 올린다.", "2. 천사채를 올린다.", "3. 마요네즈 소스와 기호에 맞게 날치알을 올린다.", "4. 쭈꾸미를 넣어 완성시킨다.", "5. 맛있게 먹기~"]},
-ch:{contents :["1. 깻잎을 한 손위에 올린다.", "2. 천사채를 올린다.", "3. 마요네즈 소스와 기호에 맞게 날치알을 올린다.", "4. 쭈꾸미를 넣어 완성시킨다.", "5. 맛있게 먹기~"]},
+en:{contents :["1. Place perilla leaves on one hand.", "2. Put salad on top of perilla leaves.", "3. Put the mayonnaise sauce and flying fish roe on top according to your preference.", "4. Put octopus on top of it to finish.", "5. Let's enjoy it"]},
+ja:{contents :["1. 片手にエゴマの葉を載せる", "2. エゴマの葉の上にサラダを載せる", "3. お好みでマヨネーズソースと飛び子を載せる。", "4. 最後にタコを載せて仕上げる。", "5. さあ、楽しみましょう。"]},
+th:{contents :["1. วางใบงาบนฝ่ามือข้างหนึ่ง", "2. วางสลัดบนใบงา", "3. ใส่น้ำสลัดมายองเนสและไข่ปลาบินตามความชอบ", "4. ใส่ปลาหมึกด้านบนเพื่อเสร็จสิ้น", "5. มาเพลิดเพลินกันเถอะ"]},
+ch:{contents :["1. 在一只手掌上放紫苏叶", "2. 把沙拉放在紫苏叶上", "3. 根据你的喜好放上蛋黄酱和飞鱼卵。", "4. 最后放上章鱼完成。", "5. 让我们享受吧。"]},
 }
 const MAX_PAGE = 4; // 마지막 페이지 번호를 상수로 관리
+
+const imageArr : StaticImageData[] = [
+    img1,img2,img3,img4,img5
+]
 
 type Direction = 'prev' | 'next';
 
@@ -73,7 +81,7 @@ const HowtoeatButton = ({selectedLanguage}:Props) => {
             {isModalOpen && (
                 <HowtoeatModal open={isModalOpen} onClose={() => setIsModalOpen(false)}>
                     <div className="flex flex-col h-11/12 ">
-                        <ContentDisplay img={img} description={language.contents[curPage]} pageNumber={curPage} />
+                        <ContentDisplay img={imageArr[curPage]} description={language.contents[curPage]} pageNumber={curPage} />
                         <div className="flex w-full">
                             <NavigationButton direction="prev" onClick={() => navigatePage('prev')} />
                             <NavigationButton direction="next" onClick={() => navigatePage('next')} />
