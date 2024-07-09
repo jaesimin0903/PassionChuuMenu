@@ -3,6 +3,13 @@ import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 import DetailModal from "./DetailModal";
 
+// import Swiper JS
+
+// import Swiper styles
+import "swiper/css";
+import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation,Pagination} from 'swiper/modules';
 type MenuItemProps = {
     name: string;
     price: string;
@@ -50,13 +57,18 @@ const MenuItemCard = ({ name, price, imageUrl, discription }: MenuItemProps) => 
             </div>
             {isModalOpen && (
                 <DetailModal open={isModalOpen} onClose={()=>handleModalClose()}>
-                    <Image
+                    {/* <Image
                     src={imageUrl}
                     alt={name}
                     className="object-cover w-full h-1/2"
                     width={240}
                     height={100}
-                />
+                /> */}
+                <Swiper pagination={true} modules={[Pagination]} className="mySwiper w-full object-cover h-1/2">
+                    <SwiperSlide><Image src={imageUrl} alt={name} width={240} height={100}/></SwiperSlide>
+                    <SwiperSlide>이미지 준비 중 입니다.</SwiperSlide>
+                    <SwiperSlide>이미지 준비 중 입니다.</SwiperSlide>
+                </Swiper>
                     <div className="p-4 h-1/2 text-center"  >
                     {
                 (name_arr.length >= 2) ? (
@@ -68,6 +80,7 @@ const MenuItemCard = ({ name, price, imageUrl, discription }: MenuItemProps) => 
                     <div className="text-xl font-extrabold mb-2 h-1/2">{name_arr[0]}</div>
                 )
                 }
+  
                         <div className="text-md font-normal">{discription}</div>
                         <div className="text-gray-700 card-price">{price}</div>
                     </div>
