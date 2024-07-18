@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 열정도 쭈꾸미 메뉴 웹사이트 (for foreigner)
 
-## Getting Started
+[열정도 쭈꾸미 메뉴판](https://passion-chuu-menu.vercel.app/)
 
-First, run the development server:
+### 배경
+-----
+열정도 쭈꾸미에 방문하는 다양한 외국인들이 일본어로 된 메뉴판 하나로 의지하고 있다. 또한, 파파고로 메뉴판을 번역하는 불편하고 힘든 일이 외국인들의 매장 경험을 망치고 있다. 이를 해결하기 위해 다국어 언어를 지원하는 메뉴판 웹사이트를 개발하려고 한다. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 기술 스택
+---
+Next.js
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Next를 공부하기 위한 목적으로 선택했다. 추후에 DB와 연결시켜 직원이 메뉴판을 수정할 수 있는 기능을 구현할 예정이다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 기능
+---
+1. 외국어 전환
+2. 메뉴별 상세 페이지
+3. 맛있게 먹는 방법
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
