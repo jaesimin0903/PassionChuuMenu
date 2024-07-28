@@ -3,7 +3,7 @@
 "use client";
 
 import { useRouter, usePathname } from "next/navigation";
-type Language = 'ko' | 'en' | 'ja' | 'th' | 'ch';
+import { Language } from "@/app/types";
 type Props = {
     selectedLanguage: Language;
     setSelectedLanguage: (language: Language) => void;
@@ -15,7 +15,8 @@ const MenuDropdown = ({ selectedLanguage, setSelectedLanguage }: Props) => {
 
     const changeLanguage = (lng: Language) => {
         setSelectedLanguage(lng);
-        //router.push(`/${lng}${pathname}`);
+        router.push(`/${lng}`);
+        console.log(lng);
     };
 
     return (

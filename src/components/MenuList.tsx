@@ -38,6 +38,7 @@ import img29 from "../images/29.jpg";
 import img30 from "../images/30.jpg";
 import img31 from "../images/31.jpg";
 import { StaticImageData } from "next/image";
+import { useTranslations } from "next-intl";
 
 type Language = 'ko' | 'en' | 'ja' | 'th' | 'ch';
 
@@ -257,13 +258,16 @@ const defaultMenu = translations.ko;
 const MenuList = ({ selectedLanguage }: Props) => {
     const [menu, setMenu] = useState(translations[selectedLanguage] || defaultMenu);
 
+    const t = useTranslations("Title");
+    const title_arr = [t('Combo3'),t('Combo2'),t('Additional'),t('Side'),t('Toping'),t('Bevarage'),]
+
     useEffect(() => {
         setMenu(translations[selectedLanguage] || defaultMenu);
     }, [selectedLanguage]);
 
     return (
         <div className="space-y-8">
-            {[menu.title, menu.title2,menu.title33, menu.title3, menu.title4, menu.title5].map((title, index) => (
+            {title_arr.map((title, index) => (
                 <div key={index}>
                     <h1 className="text-3xl font-bold text-center mb-4 text-content" id={index.toString()}>{title}</h1>
                     <div className="menu-list">

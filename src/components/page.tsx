@@ -13,7 +13,6 @@ type Language = "ko" | "en" | "ja" | "th" | "ch";
 
 const Menu = ({ params }: { params: { locale: Language } }) => {
     const [selectedLanguage, setSelectedLanguage] = useState(params.locale);
-
     return (
         <div className="container mx-auto px-4 py-6 space-y-6">
             <h1 className="text-2xl font-bold text-center text-content">열정도 쭈꾸미 메뉴판</h1>
