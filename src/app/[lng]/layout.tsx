@@ -28,6 +28,7 @@ export default async function LocaleLayout({
           <div id="global-modal"></div>
           <div id="howtoeat-modal"></div>
         </NextIntlClientProvider>
+        <Analytics/>
       </body>
     </html>
   );
