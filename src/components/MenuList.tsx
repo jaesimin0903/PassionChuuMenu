@@ -259,7 +259,7 @@ const MenuList = ({ selectedLanguage }: Props) => {
     const [menu, setMenu] = useState(translations[selectedLanguage] || defaultMenu);
 
     const t = useTranslations("Title");
-    const title_arr = [t('Combo3'),t('Combo2'),t('Additional'),t('Side'),t('Toping'),t('Bevarage'),]
+    const title_arr = [t('Combo3'),t('Combo2'),t('Additional'),t('Side'),t('Toping'),t('Beverage'),]
 
     useEffect(() => {
         setMenu(translations[selectedLanguage] || defaultMenu);

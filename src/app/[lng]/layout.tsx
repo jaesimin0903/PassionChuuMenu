@@ -4,6 +4,7 @@ import {getMessages, unstable_setRequestLocale} from 'next-intl/server';
 import "@/app/globals.css"
 import { LanguageProvider } from '../context/LanguageCotext';
 import { Language } from '../types';
+import { Analytics } from "@vercel/analytics/react"
 export default async function LocaleLayout({
   children,
   params: {locale}
